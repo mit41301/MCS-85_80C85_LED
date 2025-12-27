@@ -28,27 +28,27 @@ SO
 
 ![RAL_RAF_XOR](https://github.com/user-attachments/assets/998e8313-fb1d-4c71-8d69-a567410dba06)
 
-;##################################################
-; MCS-85 SELF MODIFYING PROGRAM FOR RUNNING 8 LEDs
-;##################################################
-		ORG 2000H
+;##################################################  
+; MCS-85 SELF MODIFYING PROGRAM FOR RUNNING 8 LEDs  
+;##################################################  
+		ORG 2000H  
 
-		XRA A
-		STC
-		RAL
-		OUT 04
-		CALL DELAY
-		CALL DELAY
-		CC XOR8
-		JMP 2002
-XOR8: 	LDA 2002
-		XRI A,08
-		STA 2002
-		XRA A
-		STC
-		RET
+		XRA A  
+		STC  
+		**RAL** 
+		OUT 04  
+		CALL DELAY  
+		CALL DELAY  
+		CC XOR8  
+		JMP 2002  
+XOR8: 	LDA 2002  
+		XRI A,08  
+		STA 2002  
+		XRA A  
+		STC  
+		RET  
 
-; DELAY is part of MONITOR program and not Listed Here
+; DELAY is part of MONITOR program and not Listed Here  
 
 Only before starting the execution of the program, we are sure the program memory space location 2002 contains RAL instruction with a opcode 0x17. After exectuting this content changes to 0X1F and again back to 0X17 depends on CARRY FLAG status. Since the MCS-85 source program changes dynamically, no one know what is the content value at the location 2002.  It may be 0x17 or 0x1F depends on the current status and conditions.
 

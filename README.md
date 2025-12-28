@@ -30,6 +30,6 @@ SO
 
 Only before starting the execution of the program, we are sure the program memory space location 2002 contains RAL instruction with a opcode 0x17. After exectuting this content changes to 0X1F and again back to 0X17 depends on CARRY FLAG status. Since the MCS-85 source program changes dynamically, no one know what is the content value at the location 2002.  It may be 0x17 or 0x1F depends on the current status and conditions.
 
-Same logic is applicable and true for RLC and RRC instruction of MCS-85 family.
+Same logic is applicable and true for RLC and RRC instruction of MCS-85 family. There are much more instructions with similar and opposite actions by flipping one or two bits.
 
 This may be impossible with modern computers and quantum computers! ;)
